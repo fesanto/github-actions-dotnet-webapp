@@ -1,16 +1,18 @@
 name: Executar por evento de push e de hora em hora
 
 on:
-  push:    # Aciona quando ocorre um push
+  # Aciona quando ocorre um push
+  push:    
   schedule:
-    - cron: '0 * * * *'   # De hora em hora, no primeiro minuto
+    # Agendando execução do push de hora em hora, no primeiro minuto
+    - cron: '0 * * * *'   
 
 jobs:
-  build:   # nome do job
-    runs-on: ubuntu-latest   #roda em um computador remoto do github
+  build:   
+    runs-on: ubuntu-latest   
     steps:
       - name: Checkout do código
-        uses: actions/checkout@v3   # baixa todos os arquivos do meu repositório para esse ambiente
+        uses: actions/checkout@v3   
 
       - name: Rodar script ou comando   
-        run: echo "Executando o workflow"   # retorna no terminal
+        run: echo "Executando o workflow"   
